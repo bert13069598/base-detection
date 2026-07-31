@@ -20,5 +20,7 @@ def data_select(args):
 
     which = importlib.import_module(f'dataloader.loader.{loader.loader_map[args.data]}')
     which.CRAWLER(root_path, images, labels)
-    datasets = which.LOADER(args, images, labels, save_path, cls2name)
+    datasets = which.LOADER(
+        args, images, labels, save_path, cls2name, split_ratio=args.split
+    )
     return save_path, datasets
