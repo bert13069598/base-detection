@@ -38,11 +38,11 @@ python loader.py 0 --make yolo
 1. 데이터셋 생성
 
 ```bash
-python loader.py --init <데이터셋명>
+python loader.py --init <데이터셋>
 ```
 
-1. [cfg/datasets](cfg/datasets)/<데이터셋명>.yaml 작성
-2. [dataloader/loader](dataloader/loader)/loader_<데이터셋명>.py 작성
+1. [cfg/datasets](cfg/datasets)/<데이터셋>.yaml 작성
+2. [dataloader/loader](dataloader/loader)/loader_<데이터셋>.py 작성
 3. `loader.py` 옵션 지정 후 구동
 
 | dataset | folder path / filename | idx | total | link |
@@ -51,7 +51,7 @@ python loader.py --init <데이터셋명>
 
 ## 🚀 train dataset
 
-<데이터셋명>과 동일하게 <프로젝트> 설정
+<데이터셋>과 동일하게 <프로젝트> 설정
 
 > python train.py -m <모델명> <-o> -p <프로젝트>
 
@@ -61,7 +61,7 @@ python loader.py --init <데이터셋명>
 python train.py -m yolov8s -p car
 ```
 
-1. [cfg/datasets](cfg/datasets)/<데이터셋명>.yaml 경로 확인
+1. [cfg/datasets](cfg/datasets)/<데이터셋>.yaml 경로 확인
 2. `train.py` 구동
 
 ### yolo dataset structure
@@ -84,12 +84,12 @@ tensorboard --logdir runs/yolov8s/car
 
 ## ✨ export model
 
-> python export.py -m <모델명> <-o> -p <프로젝트> -b <배치 수>
+> python export.py -m <모델명> <-o> -p <프로젝트>
 
 예시
 
 ```bash
-python export.py -m yolov8s -p car -b 1
+python export.py -m yolov8s -p car
 ```
 
 `pt` -> `onnx`
